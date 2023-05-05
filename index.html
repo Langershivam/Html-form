@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Forms</title>
+   <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="main">
+    <div class="nav">
+     <h2>Personal details</h2>
+    </div>
+     <form>
+        <div class="grid">
+         <label for="name">Name:</label>
+         <input type="text" name="name" id="Name">
+        </div>
+        <div class="grid">
+         <label for="gender">Gender:</label>
+         <div>
+            <input type="radio" name="gender" value="Male" id="gender">Male
+            <input type="radio" name="gender" value="Female" id="gender">Female
+        </div>
+        </div>
+        <div class="grid">       
+         <label for="contact">Contact:</label>
+         <input type="tel" name="Mobile no." id="Contact">
+        </div>
+        <div class="grid">
+         <label for="dob">Date of Birth:</label>
+         <input type = "date" name="date of birth" id="Dob">
+        </div>
+        <div class="grid">
+         <label for="email">Email:</label>
+         <input type = "email" name="email id" id="Email">
+        </div>
+        <div class="grid">
+         <label for="address">Address:</label>
+         <input type = "text" name="address" id="Address">
+        </div>
+        <div class="grid">
+         <label for="languages">Languages:</label> 
+         <div>  
+         <input type="checkbox" name="languages" value="C" id="languages">C  <input type="checkbox" name="languages" value="C++" id="languages">C++  <input type="checkbox" name="languages" value="Python" id="languages">Python  <input type="checkbox" name="languages" value="Javascript" id="languages">Java
+        </div>
+        </div> 
+        <div class="grid">
+        <label for="hobbies">Hobbies:</label>
+        <div>
+        <select name="Hobbies" id="Hobbies">
+            <option value="Sports">Sports</option>
+            <option value="Reading Books">Reading Books</option>
+            <option value="Programming">Programming</option>
+            <option value="Travelling">Travelling</option>
+        </select>
+    </div>
+        </div>
+        
+      <div class="btn">
+          <input type="submit" value="Submit now" id="submit">
+          <input type="submit" value="Show Data" id="showData">
+     </div>
+    
+    </form>
+    
+    <div id="output">
+        
+    </div>
+<script src="form.js">
+    
+</script>
+</body>
+</html>
