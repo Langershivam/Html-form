@@ -96,6 +96,8 @@ document.getElementById("showData").addEventListener("click",function(){
             document.querySelector(".value").innerHTML+=val[obj]+"<br>";
     
     }
+     document.querySelector(".key").innerHTML+="<br>";
+            document.querySelector(".value").innerHTML+="<br>";
     
     }
 
