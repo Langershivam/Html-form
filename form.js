@@ -60,9 +60,10 @@
 // }
  
  let items=[];
-const form = document.querySelector('form');
-form.addEventListener('submit',(e)=>{
+ const form = document.querySelector('form');
+ form.addEventListener('submit',(e)=>{
     e.preventDefault();
+    validateForm();
     const data=new FormData(form);
     const details=Object.fromEntries(data);
     let languages=data.getAll("languages");
@@ -75,19 +76,29 @@ form.addEventListener('submit',(e)=>{
 
     console.log(values);
  
+    });
 
- 
 
-});
+    
 
 document.getElementById("showData").addEventListener("click",function(){
+    let keys=document.querySelector(".key");
+    let values=document.querySelector(".value");
+    if(keys.innerHTML!=""&&values.innerHTML!=""){
+        keys.innerHTML="";
+        values.innerHTML="";
+    }
     const records = JSON.parse(localStorage.getItem("items"));
     
     for(val of records){
         for(obj in val){
-            document.getElementById("output").innerHTML+=obj.toUpperCase()+":"+val[obj]+"<br>";
-        }
+            document.querySelector(".key").innerHTML+=obj.toUpperCase()+":<br>";
+            document.querySelector(".value").innerHTML+=val[obj]+"<br>";
+    
     }
+    
+    }
+
 
  });
 
