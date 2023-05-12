@@ -72,8 +72,6 @@ function addressValid() {
     else{
         addressinput.style.border = "2px solid green";
         errors[3].style.display = "none";
-        console.log(addressinput);
-
         return true;
     }
 

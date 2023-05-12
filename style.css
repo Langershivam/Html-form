@@ -107,13 +107,31 @@ body{
 }
 
 #output{
-    
     border-top: none;
-    display: flex;
-    justify-content: space-around;
+    width: 60%;
+}
+
+#output table{
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: unset;
+    
+}
+
+#output td{
+    border: 2px solid black;
+    padding: 5px 5px;
+    word-wrap: break-word;
+}
+
+#thead{
+    font-weight: bold;
 
 }
 
+#output button{
+    margin-right: 5px;
+}
 
 small{
     display: none;
@@ -121,157 +139,5 @@ small{
 
 
 
-/* body{
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.main{
-    width: 100%;
-    max-width: 700px;
-    background: black;
-    padding: 30px;
-    margin: 0 30px;
-    border-radius: 10px;
-}
-
-.form-title{
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    padding-bottom: 6px;
-    color: white;
-    text-shadow: 2px 2px 2px black;
-}
-
-.main{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 0;
-}
-
-.grid:nth-child(2n){
-   justify-content: end;
-}
-
-.grid{
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-    padding-bottom: 15px;
-}
-
-.grid label{
-    width: 70%;
-    color: white;
-    font-size: 20px;
-    font-weight: 400;
-    margin: 5px 0;
-}
-
-.grid input{
-    height: 40px;
-    width: 70%;
-    border-radius: 7px;
-    outline: none;
-    border: 1px solid grey;
-    padding: 0 10px;
-} */
 
 
- 
-/* form input{
-    margin: 2px;
-    padding: 6px;
-    
-}
- label{
-    
-    margin: 8px;
-    grid-column: 1;
-  }  */
-
-/* 
-  form{
-
-    
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    grid-gap: 16px;
-  } 
-
-.grid{
-    width: 50%;
-    display: grid;
-    grid-template-columns:  1fr 1fr ;
-    grid-gap: 1px;
-    margin:0 auto;
-    padding-bottom: 30px;
-}
-.main{
-    
-    margin-left: 25%;
-    background-color: whitesmoke;
-    width: 50%;
-    margin-top: 5%;
-}
-.nav{
-   text-align: center;
-   margin-bottom: 40px;
-   padding-top: 10px;
-}
-.btn{
-    margin-top: 40px;
-    margin-left: 30%;
-    padding-bottom: 20px;
-    display: flex;
-    gap: 60px; 
-}
-.btn input:hover{
-    color: #ffff;
-}
-/* @media screen and (max-width: 800px){
-    
-        .main{
-            grid-template-columns: auto auto;
-        }
-} */
-
-/* @media screen and (max-width: 600px) {
-    .main {
-        width: 90%;
-        margin-left: 5%;
-    }
-    
-    input[type="text"],
-    input[type="email"],
-    input[type="date"],
-    input[type="tel"] {
-        width: 100%;
-        margin: 2px 0;
-        padding: 6px 0;
-    }
-    
-    label {
-        margin: 8px 0;
-    }
-    
-    form {
-        display: block;
-    }
-    
-    .btn {
-        margin: 20px auto;
-        margin-left: 0;
-        display: block;
-    }
-    
-    .btn input {
-        width: 100%;
-        margin: 10px 0;
-    }
-}     */
