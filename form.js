@@ -13,19 +13,15 @@ const records = JSON.parse(localStorage.getItem("items"));
     items.push(details);
     localStorage.setItem("items",JSON.stringify(items));
     alert("Your details are saved in local storage");
- 
-    
-
-    
- 
-    });
+    form.reset()
+ });
 
 
     
 
 document.getElementById("showData").addEventListener("click",function(){
     let i=0;
-    
+    const records = JSON.parse(localStorage.getItem("items"));
     let table=document.getElementById("tab");
     table.innerHTML="";
     for(val of records){
@@ -55,11 +51,26 @@ document.getElementById("showData").addEventListener("click",function(){
        let button= document.createElement("button");
        button.innerHTML="Edit";
        button.setAttribute("value",index);
-       button.onclick = (e)=>{onEdit(e.target.value);}
-        cell.appendChild(button);
+       cell.appendChild(button);
+
+       button.onclick = (e)=>{
+        onEdit(e.target.value);
+        
+        let updateButton = document.createElement("button");
+        updateButton.innerHTML = "Update";
+        updateButton.setAttribute("value",index);
+        updateButton.onclick = (e) => {
+            // console.log(e.target.value)
+        updateRecord(e.target.value);
+        };
+        cell.appendChild(updateButton);
+        button.style.display = "none";
+    }
         let button2= document.createElement("button");
         button2.innerHTML="DELETE";
-        cell.appendChild(button2);
+        button2.setAttribute("value",index);
+       button2.onclick = (e)=>{ondelete(e.target.value);}
+       cell.appendChild(button2);
         co=0;
         ++ro;
      }

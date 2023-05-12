@@ -22,35 +22,66 @@
 // }
 
 function onEdit(value){
-//     let eachRecord=records[value];
-//     // console.log(records[value]);
-//     let inputtag=document.querySelectorAll("input[type='text'],input[type='tel'],input[type='email'],select");
-//     let form=document.querySelector("form")
-//     form.reset();
-//   let inputgender = document.querySelectorAll("input[type='radio']");
-//   let inputlanguage = document.querySelectorAll("input[type='checkbox']");
-//   for (let item in eachRecord) {
-//     inputtag.forEach((input) => {
-//       if (input.name == item) {
-//         input.value = eachRecord[item];
-//       }
-//       if (item == "languages") {
-//         for (let element in eachRecord[item]) {
-//           inputlanguage.forEach((input) => {
-//             if (input.value == eachRecord[item][element]) {
-//               input.checked = true;
-//             }
-//           });
-//         }
-//       }
-//       if (item == "gender") {
-//         inputgender.forEach((input) => {
-//           if (input.value == eachRecord[item]) {
-//             input.checked = true;
-//           }
-//         });
-//       }
-//     });
-//   }
+    let eachRecord=records[value];
+    let inputtag=document.querySelectorAll("input[type='text'],input[type='tel'],input[type='email'],select");
+    let form=document.querySelector("form")
+    form.reset();
+  let inputgender = document.querySelectorAll("input[type='radio']");
+  let inputlanguage = document.querySelectorAll("input[type='checkbox']");
+  for (let item in eachRecord) {
+    inputtag.forEach((input) => {
+      if (input.name == item) {
+        input.value = eachRecord[item];
+      }
+      if (item == "languages") {
+        for (let element in eachRecord[item]) {
+          inputlanguage.forEach((input) => {
+            if (input.value == eachRecord[item][element]) {
+              input.checked = true;
+            }
+          });
+        }
+      }
+      if (item == "gender") {
+        inputgender.forEach((input) => {
+          if (input.value == eachRecord[item]) {
+            input.checked = true;
+          }
+        });
+      }
+    });
+  }
+
+  
     
 }
+
+function updateRecord(value) {
+    let inputtag=document.querySelectorAll("input[type='text'],input[type='tel'],input[type='email'],select");
+    let inputgender = document.querySelectorAll("input[type='radio']");
+    let inputlanguage = document.querySelectorAll("input[type='checkbox']");
+    let updatedRecord = {};
+    for (let input of inputtag) {
+      updatedRecord[input.name] = input.value;
+    }
+    for (let input of inputgender) {
+      if (input.checked) {
+        updatedRecord["gender"] = input.value;
+        break;
+      }
+    }
+    let selectedLanguages = [];
+    for (let input of inputlanguage) {
+      if (input.checked) {
+        selectedLanguages.push(input.value);
+      }
+    }
+    updatedRecord["languages"] = selectedLanguages;
+    records[value] = updatedRecord;
+    localStorage.setItem("items", JSON.stringify(records));
+    form.reset();
+    document.getElementById("showData").click();
+
+    console.log('value should be updated');
+  }
+
