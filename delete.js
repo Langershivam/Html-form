@@ -14,15 +14,8 @@
 // }
 
 function ondelete(value){
- console.log(records[value]);
-//  delete records[value];
-// if(value===0){
-//     records.unshift();
-// }
-// else{
-//     records.splice(value,value)
-// }
-//  localStorage.setItem("items",JSON.stringify(records));
-console.log(records)
- document.getElementById("showData").click();   
+    records.splice(value, 1);
+    localStorage.setItem("items", JSON.stringify(records));
+    document.getElementById("showData").click();
+  
 }

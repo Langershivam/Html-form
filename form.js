@@ -60,7 +60,7 @@ document.getElementById("showData").addEventListener("click",function(){
         updateButton.innerHTML = "Update";
         updateButton.setAttribute("value",index);
         updateButton.onclick = (e) => {
-            // console.log(e.target.value)
+            
         updateRecord(e.target.value);
         };
         cell.appendChild(updateButton);
